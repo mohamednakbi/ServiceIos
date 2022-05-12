@@ -22,7 +22,11 @@ const usershema = new mongoose.Schema(
         phone :{
             type : String,
             required : true
-        }
+        },
+        code: {
+            type: String,
+            required: false,
+          },
         
     })
 mongoose.model("User", usershema)
