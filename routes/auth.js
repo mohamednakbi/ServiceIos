@@ -148,12 +148,12 @@ router.post("/forgetPassword", async (req, res) => {
         message: "email not found",
       });
     } else {
-     
+     /*
         var code = (Math.floor(Math.random() * 10000) + 10000)
         .toString()
         .substring(1);
       console.log(code);
-     /**/
+     */
       var code = Math.floor(Math.random() * 100000);
       var mailContent = `Almost done : ` + code;
   
