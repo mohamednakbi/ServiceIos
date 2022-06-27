@@ -134,6 +134,8 @@ var transporter = nodemailer.createTransport({
   auth: {
     user: "onebloodesprit@gmail.com",
     pass: "icwzpfvzcnykyfsd",
+    // 24058589
+    
   },
   tls: {
     rejectUnauthorized: false
@@ -148,13 +150,11 @@ router.post("/forgetPassword", async (req, res) => {
         message: "email not found",
       });
     } else {
-     /*
-        var code = (Math.floor(Math.random() * 10000) + 10000)
+      var code = (Math.floor(Math.random() * 10000) + 10000)
         .toString()
         .substring(1);
       console.log(code);
-     */
-      var code = Math.floor(Math.random() * 100000);
+      // var code = Math.floor(Math.random() * 100000);
       var mailContent = `Almost done : ` + code;
   
       var mailOptions = {
@@ -169,7 +169,7 @@ router.post("/forgetPassword", async (req, res) => {
           res.json({ message: "error sending" });
           console.log(error);
         } else {
-          res.status(200).json({
+          res.status(205).json({
             code: code,
           });
           User.findOneAndUpdate(
